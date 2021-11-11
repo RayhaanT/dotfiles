@@ -7,22 +7,23 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " VimTex
-    Plug 'lervag/vimtex'
+"     Plug 'lervag/vimtex'
     " Track the engine.
-    Plug 'SirVer/ultisnips'
+    "    Plug 'SirVer/ultisnips'
     " Snippets are separated from the engine. Add this if you want them:
     Plug 'honza/vim-snippets'
     " Molokai Theme
     Plug 'tomasr/molokai'
     " Gruvbox Theme
     Plug 'morhetz/gruvbox'
+    " Airline status
+    Plug 'vim-airline/vim-airline' 
+    " Airline themes
+    Plug 'vim-airline/vim-airline-themes'
+    " Deoplete autocompletion
+    " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Coc autocompletion and more
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}    
+    Plug 'whonore/Coqtail'
 call plug#end()
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
