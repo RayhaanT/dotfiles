@@ -7,7 +7,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " VimTex
-"     Plug 'lervag/vimtex'
+     Plug 'lervag/vimtex'
     " Track the engine.
     "    Plug 'SirVer/ultisnips'
     " Snippets are separated from the engine. Add this if you want them:
@@ -25,5 +25,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Coc autocompletion and more
     Plug 'neoclide/coc.nvim', {'branch': 'release'}    
     Plug 'whonore/Coqtail'
+    Plug 'phanviet/vim-monokai-pro'
+    Plug 'sainnhe/sonokai'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 

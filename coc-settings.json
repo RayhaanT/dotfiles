@@ -7,8 +7,18 @@
             "initializationOptions": {
             "cache": {
               "directory": "/tmp/ccls"
+            },
+        "racket": {
+              "command": "racket",
+              "args": [
+                "--lib",
+                "racket-langserver"
+              ],
+              "filetypes": [
+                "scheme"
+              ]
             }
-      }
-  }
-}
+              }
+          }
+        }
 }

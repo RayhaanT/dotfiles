@@ -1,6 +1,5 @@
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/airline.vim
-let g:airline_powerline_fonts = 1
 
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
@@ -17,7 +16,13 @@ set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
-colorscheme gruvbox
+set termguicolors
+" colorscheme monokai_pro 
+" let g:sonokai_style = 'shusia'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 0
+colorscheme sonokai 
+hi Normal guibg=NONE ctermbg=NONE
 
 set nobackup
 set nowritebackup
