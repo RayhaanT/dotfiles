@@ -16,13 +16,14 @@ set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
-set termguicolors
+
+" set termguicolors
 " colorscheme monokai_pro 
 " let g:sonokai_style = 'shusia'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 0
 colorscheme sonokai 
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 set nobackup
 set nowritebackup
@@ -36,3 +37,5 @@ nmap <silent> gr <Plug>(coc-references)
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" : "<TAB>"
+
+inoremap <C-l> <Esc>:call unicoder#start(1)<CR>

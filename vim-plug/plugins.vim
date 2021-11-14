@@ -29,5 +29,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sainnhe/sonokai'
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
+    Plug 'joom/latex-unicoder.vim'
 call plug#end()
 
