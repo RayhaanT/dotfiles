@@ -31,5 +31,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'joom/latex-unicoder.vim'
     Plug 'wlangstroth/vim-racket'
+    Plug 'kien/ctrlp.vim'
 call plug#end()
 
