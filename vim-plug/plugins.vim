@@ -30,5 +30,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
     Plug 'joom/latex-unicoder.vim'
+    Plug 'wlangstroth/vim-racket'
 call plug#end()
 

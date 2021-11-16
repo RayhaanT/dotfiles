@@ -17,6 +17,8 @@ set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 
+let mapleader=","
+
 " set termguicolors
 " colorscheme monokai_pro 
 " let g:sonokai_style = 'shusia'
