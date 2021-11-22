@@ -22,7 +22,7 @@ let mapleader=","
 " set termguicolors
 " colorscheme monokai_pro 
 " let g:sonokai_style = 'shusia'
-let g:sonokai_enable_italic = 1
+let g:sonokai_enable_italic = 0
 let g:sonokai_disable_italic_comment = 0
 colorscheme sonokai 
 " hi Normal guibg=NONE ctermbg=NONE
