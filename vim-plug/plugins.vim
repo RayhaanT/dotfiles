@@ -20,17 +20,27 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline' 
     " Airline themes
     Plug 'vim-airline/vim-airline-themes'
-    " Deoplete autocompletion
-    " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Coc autocompletion and more
     Plug 'neoclide/coc.nvim', {'branch': 'release'}    
+    " Coq interpreter
     Plug 'whonore/Coqtail'
+    " Monokai pro theme
     Plug 'phanviet/vim-monokai-pro'
+    " Monokai pro alternative theme
     Plug 'sainnhe/sonokai'
+    " Git status line symbols
     Plug 'airblade/vim-gitgutter'
+    " Git integration in vim
     Plug 'tpope/vim-fugitive'
+    " Insert unicode from latex commands using <C-l>
     Plug 'joom/latex-unicoder.vim'
+    " Racket plugin
     Plug 'wlangstroth/vim-racket'
+    " Fuzzy file search with <C-p>
     Plug 'kien/ctrlp.vim'
+    " fzf fuzzy search
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    " fzf vim integration
+    Plug 'junegunn/fzf.vim'
 call plug#end()
 
