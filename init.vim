@@ -43,3 +43,5 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" : "<TAB>"
 
 inoremap <C-l> <Esc>:call unicoder#start(1)<CR>
+
+tnoremap <Esc> <C-\><C-n>
