@@ -42,7 +42,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     " fzf vim integration
     Plug 'junegunn/fzf.vim'
-    # Rust
+    " Rust
     Plug 'rust-lang/rust.vim'
 call plug#end()
 

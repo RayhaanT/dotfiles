@@ -17,7 +17,7 @@ set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 
-filetype plugin indenx on
+filetype plugin indent on
 
 let mapleader=","
 
