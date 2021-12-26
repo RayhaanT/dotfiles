@@ -20,5 +20,9 @@
             }
               }
           }
-        }
+        },
+    "python.venvPath": "${env:HOME}/.local/venv/nvim",
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "~/.local/venv/nvim/bin/black",
+    "coc.preferences.formatOnSaveFiletypes": ["python"]
 }
