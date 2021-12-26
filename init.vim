@@ -21,9 +21,9 @@ filetype plugin indent on
 
 let mapleader=","
 
-" set termguicolors
+set termguicolors
 " colorscheme monokai_pro 
-" let g:sonokai_style = 'shusia'
+let g:sonokai_style = 'andromeda'
 let g:sonokai_enable_italic = 0
 let g:sonokai_disable_italic_comment = 0
 colorscheme sonokai 
@@ -45,3 +45,5 @@ inoremap <silent><expr> <TAB>
 inoremap <C-l> <Esc>:call unicoder#start(1)<CR>
 
 tnoremap <Esc> <C-\><C-n>
+
+filetype plugin indent on

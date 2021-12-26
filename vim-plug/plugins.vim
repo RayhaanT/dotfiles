@@ -44,5 +44,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
     " Rust
     Plug 'rust-lang/rust.vim'
+    Plug 'atelierbram/Base2Tone-vim'
 call plug#end()
 
