@@ -10,6 +10,7 @@ set expandtab               " converts tabs to white space
 set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
+set relativenumber
 set wildmode=longest,list   " get bash-like tab completions
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
@@ -26,7 +27,7 @@ set termguicolors
 let g:sonokai_style = 'andromeda'
 let g:sonokai_enable_italic = 0
 let g:sonokai_disable_italic_comment = 0
-colorscheme sonokai 
+colorscheme molokai 
 " hi Normal guibg=NONE ctermbg=NONE
 
 set nobackup
@@ -38,8 +39,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
-let g:coc_disable_transparent_cursor = 1
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" : "<TAB>"
@@ -49,3 +48,7 @@ inoremap <C-l> <Esc>:call unicoder#start(1)<CR>
 tnoremap <Esc> <C-\><C-n>
 
 filetype plugin indent on
+
+let g:sneak#label = 1
+nmap f <Plug>Sneak_s
+nmap F <Plug>Sneak_S

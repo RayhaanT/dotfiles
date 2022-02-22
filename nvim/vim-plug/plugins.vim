@@ -45,5 +45,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Rust
     Plug 'rust-lang/rust.vim'
     Plug 'atelierbram/Base2Tone-vim'
+    " Better seeking with f
+    Plug 'justinmk/vim-sneak'
+    " Visual debugging
+    Plug 'puremourning/vimspector'
 call plug#end()
 
