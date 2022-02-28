@@ -84,7 +84,7 @@ plugins=(
     sudo
     zsh-autosuggestions
     dirhistory
-    copydir
+    copypath
 )
 
 
