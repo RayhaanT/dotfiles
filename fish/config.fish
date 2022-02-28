@@ -11,3 +11,21 @@ source /usr/share/nvm/init-nvm.sh
 set -gx LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/rayhaan/clang+llvm/include
 setxkbmap -option caps:escape
 clear
+
+# Useful aliases
+# Add git ssh key
+function gssh
+    eval (ssh-agent -c)
+    ssh-add ~/.ssh/id_ed25519
+end
+
+# Git shorthand
+alias gf="git fetch"
+alias gp="git pull"
+alias ga="git add --all; git status"
+alias gs="git status"
+
+# Commit shorthand
+function gc
+    git commit -m "$argv"
+end
