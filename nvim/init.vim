@@ -21,13 +21,17 @@ set ttyfast                 " Speed up scrolling in Vim
 filetype plugin indent on
 
 let mapleader=","
+let maplocalleader=","
 
 set termguicolors
 " colorscheme monokai_pro 
 let g:sonokai_style = 'andromeda'
 let g:sonokai_enable_italic = 0
 let g:sonokai_disable_italic_comment = 0
-colorscheme molokai 
+
+autocmd BufEnter * colorscheme molokai
+autocmd BufEnter *.tex colorscheme Base2Tone_SuburbDark
+
 " hi Normal guibg=NONE ctermbg=NONE
 
 set nobackup

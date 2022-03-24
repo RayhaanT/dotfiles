@@ -12,7 +12,8 @@ let g:airline_right_sep = ''
 
 " Switch to your current theme
 " let g:airline_theme = 'sonokai'
-let g:airline_theme = 'molokai'
+autocmd BufEnter * AirlineTheme molokai
+autocmd BufEnter *.tex AirlineTheme Base2Tone_SuburbDark
 
 " Always show tabs
 set showtabline=2

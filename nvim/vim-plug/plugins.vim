@@ -49,5 +49,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'justinmk/vim-sneak'
     " Visual debugging
     Plug 'puremourning/vimspector'
+    " Haskell
+    Plug 'neovimhaskell/haskell-vim'
+    " Racket REPL support
+    Plug 'Olical/conjure'
 call plug#end()
 
