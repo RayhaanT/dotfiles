@@ -1,1 +1,20 @@
-../.gitconfig
+[diff]
+	tool = vimdiff
+[merge]
+  tool = vimdiff
+[mergetool "vimdiff"]
+  path = nvim
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[user]
+	name = RayhaanT
+	email = tanweer.rayhaan@gmail.com
+	signingkey = 79D8EAE1
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
