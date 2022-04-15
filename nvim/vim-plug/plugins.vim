@@ -53,5 +53,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neovimhaskell/haskell-vim'
     " Racket REPL support
     Plug 'Olical/conjure'
+    " Diffview
+    Plug 'sindrets/diffview.nvim'
+    " Lua dependency
+    Plug 'nvim-lua/plenary.nvim'
 call plug#end()
 
