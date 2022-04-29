@@ -59,5 +59,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-lua/plenary.nvim'
     " Window resizing
     Plug 'simeji/winresizer'
+    " Commenting
+    Plug 'tpope/vim-commentary'
 call plug#end()
 
