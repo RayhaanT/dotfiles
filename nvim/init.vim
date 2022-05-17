@@ -19,18 +19,21 @@ set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 
 filetype plugin indent on
+let g:rustfmt_autosave = 1
+
+" Syntax-based folding
+set foldmethod=syntax
+set nofoldenable
 
 let mapleader=","
 let maplocalleader=","
 
 set termguicolors
-" colorscheme monokai_pro 
+colorscheme molokai 
 let g:sonokai_style = 'andromeda'
 let g:sonokai_enable_italic = 0
 let g:sonokai_disable_italic_comment = 0
 
-autocmd BufEnter * colorscheme molokai
-autocmd BufEnter *.tex colorscheme Base2Tone_SuburbDark
 
 " hi Normal guibg=NONE ctermbg=NONE
 
@@ -56,3 +59,5 @@ filetype plugin indent on
 let g:sneak#label = 1
 nmap f <Plug>Sneak_s
 nmap F <Plug>Sneak_S
+
+nmap <leader>rn <Plug>(coc-rename)

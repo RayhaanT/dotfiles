@@ -21,6 +21,7 @@ alias gf="git fetch"
 alias gp="git pull"
 alias ga="git add --all; git status"
 alias gs="git status"
+alias gd="git difftool"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # Commit shorthand
