@@ -60,6 +60,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Window resizing
     Plug 'simeji/winresizer'
     " Commenting
-    Plug 'tpope/vim-commentary'
+    Plug 'tomtom/tcomment_vim'
+    " Better highlighting for C and family
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
 

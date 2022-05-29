@@ -57,7 +57,7 @@ tnoremap <Esc> <C-\><C-n>
 filetype plugin indent on
 
 let g:sneak#label = 1
-nmap f <Plug>Sneak_s
-nmap F <Plug>Sneak_S
+nmap s <Plug>Sneak_s
+nmap S <Plug>Sneak_S
 
 nmap <leader>rn <Plug>(coc-rename)

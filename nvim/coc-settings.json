@@ -5,24 +5,25 @@
             "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
             "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
             "initializationOptions": {
-            "cache": {
-              "directory": "/tmp/ccls"
-            },
+                "cache": {
+                  "directory": "/tmp/ccls"
+                },
+                "highlight": {
+                    "lsRanges": true
+                }
+            }
+        },
         "racket": {
               "command": "racket",
               "args": [
                 "--lib",
                 "racket-langserver"
               ],
-              "filetypes": [
-                "scheme"
-              ]
-            }
-              }
-          }
+              "filetypes": ["scheme"]
         },
-    "python.venvPath": "${env:HOME}/.local/venv/nvim",
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "~/.local/venv/nvim/bin/black",
-    "coc.preferences.formatOnSaveFiletypes": ["python"]
+        "python.venvPath": "${env:HOME}/.local/venv/nvim",
+        "python.formatting.provider": "black",
+        "python.formatting.blackPath": "~/.local/venv/nvim/bin/black",
+        "coc.preferences.formatOnSaveFiletypes": ["python"]
+    }
 }
