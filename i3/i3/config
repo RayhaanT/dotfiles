@@ -26,6 +26,10 @@ exec --no-startup-id dex --autostart --environment i3
 # Start dunst
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
+# Turn off sleep
+exec_always xset s off
+exec_always xset -dpms
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
