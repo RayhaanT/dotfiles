@@ -1,5 +1,4 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
-
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     " File Explorer
@@ -7,7 +6,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " VimTex
-     Plug 'lervag/vimtex'
+    Plug 'lervag/vimtex'
     " Track the engine.
     "    Plug 'SirVer/ultisnips'
     " Snippets are separated from the engine. Add this if you want them:
@@ -44,6 +43,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
     " Rust
     Plug 'rust-lang/rust.vim'
+    " Two tone theme pack
     Plug 'atelierbram/Base2Tone-vim'
     " Better seeking with f
     Plug 'justinmk/vim-sneak'
@@ -61,7 +61,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'simeji/winresizer'
     " Commenting
     Plug 'tomtom/tcomment_vim'
-    " Better highlighting for C and family
+    " " Better highlighting for C and family
     Plug 'jackguo380/vim-lsp-cxx-highlight'
+    " Replace brackets and stuff
+    Plug 'tpope/vim-surround'
+    " Debugger interface
+    Plug 'mfussenegger/nvim-dap'
+    " UI for debugger
+    Plug 'rcarriga/nvim-dap-ui'
 call plug#end()
 
