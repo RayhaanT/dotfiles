@@ -1,0 +1,18 @@
+[user]
+	name = RayhaanT
+	email = tanweer.rayhaan@gmail.com
+	signingkey = B6837CA2F1DB46D62D1E7FC36EF0325C79D8EAE1
+[init]
+	defaultBranch = main
+[commit]
+	gpgSign = true
+[pull]
+	rebase = false
+[diff]
+	tool = vimdiff
+[merge]
+    tool = vimdiff
+[mergetool "vimdiff"]
+    path = nvim
+[difftool]
+	prompt = false
