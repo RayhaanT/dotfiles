@@ -1,8 +1,8 @@
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/airline.vim
 
-set showmatch               " show matching 
-set ignorecase              " case insensitive 
+set showmatch               " show matching braces
+set ignorecase              " case insensitive
 set hlsearch                " highlight search 
 set tabstop=4               " number of columns occupied by a tab 
 set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
@@ -10,7 +10,7 @@ set expandtab               " converts tabs to white space
 set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
-set relativenumber
+set relativenumber          " add line numbers relative to current line
 set wildmode=longest,list   " get bash-like tab completions
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
@@ -19,29 +19,30 @@ set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 
 filetype plugin indent on
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 1  " run rustfmt on save
 
 " Syntax-based folding
 set foldmethod=syntax
 set nofoldenable
 
+" comma as leader key
 let mapleader=","
 let maplocalleader=","
 
+" color scheme
 set termguicolors
 colorscheme molokai 
 let g:sonokai_style = 'andromeda'
 let g:sonokai_enable_italic = 0
 let g:sonokai_disable_italic_comment = 0
 
-
-" hi Normal guibg=NONE ctermbg=NONE
-
+" No swp files
 set nobackup
 set nowritebackup
 
 set updatetime=300
 
+" CoC jumping
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
