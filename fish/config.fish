@@ -42,10 +42,6 @@ function b
     sudo brightnessctl s "$argv"
 end
 
-function uml
-    java -jar ~/Downloads/plantuml.jar -tpdf "$argv" > /dev/null
-end
-
 xset r rate 250 40
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /home/rayhaan/.ghcup/bin # ghcup-env
@@ -68,6 +64,12 @@ function 250
     cd ~/Documents/AMATH-250
 end
 
-function anyconnect
+function uml
+    java -jar ~/Downloads/plantuml.jar -tpdf "$argv" > /dev/null 2>&1
+end
+
+function cisco
     /opt/cisco/anyconnect/bin/vpnui
 end
+
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"

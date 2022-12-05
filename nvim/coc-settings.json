@@ -13,14 +13,6 @@
                 }
             }
         },
-        "racket": {
-              "command": "racket",
-              "args": [
-                "--lib",
-                "racket-langserver"
-              ],
-              "filetypes": ["scheme"]
-        },
         "python.venvPath": "${env:HOME}/.local/venv/nvim",
         "python.formatting.provider": "black",
         "python.formatting.blackPath": "~/.local/venv/nvim/bin/black",
