@@ -7,8 +7,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'jiangmiao/auto-pairs'
     " VimTex
     Plug 'lervag/vimtex'
-    " Track the engine.
-    Plug 'SirVer/ultisnips'
     " Snippets are separated from the engine. Add this if you want them:
     Plug 'honza/vim-snippets'
     " Molokai Theme

@@ -12,6 +12,8 @@ set autoindent              " indent a new line the same amount as the line just
 set number                  " add line numbers
 set relativenumber          " add line numbers relative to current line
 set wildmode=longest,list   " get bash-like tab completions
+set wildignore+=*/bin/*,*.so,*.swp,*.zip,*.o,*.d " ignore binary file types
+set wildignore+=*.aux,*.fdb_latexmk,*.fls,*.log,*.synctex.gz,*.xopp~,*.xopp,*.pdf,*.dvi " ignore latex outputs
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
@@ -48,8 +50,24 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" : "<TAB>"
+" <Tab>: completion
+inoremap <silent><expr> <Tab>
+    \ pumvisible() ? "\<C-N>" :
+    \ init#check_back_space() ? "\<Tab>" :
+    \ coc#refresh()
+" <S-Tab>: completion back
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<C-H>"
+" <CR>: confirm completion, or insert <CR>
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+
+function! init#check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\s'
+endfunction
+
+let g:UltiSnipsExpandTrigger="<C-SPC>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 inoremap <C-l> <Esc>:call unicoder#start(1)<CR>
 
