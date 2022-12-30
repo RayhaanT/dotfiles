@@ -1,0 +1,42 @@
+vim.opt.showmatch = true            -- show matching braces
+vim.opt.ignorecase = true           -- case insensitive search
+vim.opt.hlsearch = true             -- highlight search 
+vim.opt.incsearch = true            -- incremental search
+vim.opt.tabstop = 4                 -- number of columns occupied by a tab 
+vim.opt.softtabstop = 4             -- see multiple spaces as tabstops
+vim.opt.expandtab = true            -- converts tabs to white space
+vim.opt.shiftwidth = 4              -- width for autoindents
+vim.opt.smartindent = true          -- indent new lines in context sensitive way
+vim.opt.number = true               -- add line numbers
+vim.opt.relativenumber = true       -- add line numbers relative to current line
+vim.opt.wildmode = longest,list     -- get bash-like tab completions
+vim.opt.clipboard = unnamedplus     -- using system clipboard
+vim.opt.cursorline = true           -- highlight current cursorline
+vim.opt.ttyfast = true              -- Speed up scrolling in Vim
+
+-- ignore binary file types
+vim.opt.wildignore:append("*/bin/*,*.so,*.swp,*.zip,*.o,*.d")
+-- ignore latex outputs
+vim.opt.wildignore:append("*.aux,*.fdb_latexmk,*.fls,*.log,*.synctex.gz,*.xopp~,*.xopp,*.pdf,*.dvi")
+
+-- Make an undofile to store revision history
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
+-- Don't write swaps and things
+vim.opt.backup = false
+vim.opt.writebackup = false
+
+-- Delay between typing stop and running things like fugitive
+vim.opt.updatetime = 300
+
+-- termguicolors
+vim.opt.termguicolors = true
+
+-- syntax-sensitive folds
+vim.opt.foldmethod = "syntax"
+vim.opt.foldenable = false
+vim.opt.foldlevel = 15
+
+-- Stop the cursor from getting too close to screen bottom
+vim.opt.scrolloff = 8
