@@ -3,72 +3,78 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use('wbthomason/packer.nvim')
 
-    -- Better Syntax Support
-    use 'sheerun/vim-polyglot'
-    -- Auto pairs for '(' '[' '{'
-    use 'jiangmiao/auto-pairs'
+    -- Telescope fuzzy finder
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+    -- Treesitter (Incremental AST)
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        { run = ':TSUpdate' }
+    }
+    -- -- Auto pairs for '(' '[' '{'
+    -- use 'jiangmiao/auto-pairs'
     -- VimTex
-    use 'lervag/vimtex'
-    -- Snippets are separated from the engine. Add this if you want them:
-    use 'honza/vim-snippets'
+    use('lervag/vimtex')
     -- Molokai Theme
-    use 'tomasr/molokai'
-    -- Gruvbox Theme
-    use 'morhetz/gruvbox'
+    use('tomasr/molokai')
     -- Status line and tabline
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
-    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-    -- Coc autocompletion and more
-    use {'neoclide/coc.nvim', branch = 'release'}
-    -- Coq interpreter
-    use 'whonore/Coqtail'
-    -- Monokai pro theme
-    use 'phanviet/vim-monokai-pro'
+    use('vim-airline/vim-airline')
+    use('vim-airline/vim-airline-themes')
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "v3.*",
+        requires = 'nvim-tree/nvim-web-devicons'
+    }
     -- Monokai pro alternative theme
-    use 'sainnhe/sonokai'
-    -- Git status line symbols
-    use 'airblade/vim-gitgutter'
+    use('sainnhe/sonokai')
+    -- Git status line symbols/hunk tools/blame
+    use('lewis6991/gitsigns.nvim')
     -- Git integration in vim
-    use 'tpope/vim-fugitive'
+    use('tpope/vim-fugitive')
     -- Insert unicode from latex commands using <C-l>
-    use 'joom/latex-unicoder.vim'
-    -- Racket usein
-    use 'wlangstroth/vim-racket'
-    -- Fuzzy file search with <C-p>
-    use 'kien/ctrlp.vim'
-    -- fzf fuzzy search
-    use { 'junegunn/fzf', run = ":call fzf#install()" }
-    -- fzf vim integration
-    use { 'junegunn/fzf.vim' }
-    -- Rust
-    use 'rust-lang/rust.vim'
+    use('joom/latex-unicoder.vim')
     -- Two tone theme pack
-    use 'atelierbram/Base2Tone-vim'
+    use('atelierbram/Base2Tone-vim')
     -- Better seeking with f
-    use 'justinmk/vim-sneak'
-    -- Visual debugging
-    use 'puremourning/vimspector'
-    -- Haskell
-    use 'neovimhaskell/haskell-vim'
-    -- Racket REPL support
-    use 'Olical/conjure'
+    use('justinmk/vim-sneak')
+    -- -- Racket REPL support
+    -- use 'Olical/conjure'
     -- Diffview
-    use 'sindrets/diffview.nvim'
-    -- Lua dependency
-    use 'nvim-lua/plenary.nvim'
+    use('sindrets/diffview.nvim')
     -- Window resizing
-    use 'simeji/winresizer'
+    use('simeji/winresizer')
     -- Commenting
-    use 'tomtom/tcomment_vim'
-    -- -- Better highlighting for C and family
-    use 'jackguo380/vim-lsp-cxx-highlight'
+    use('tomtom/tcomment_vim')
     -- Replace brackets and stuff
-    use 'tpope/vim-surround'
+    use('tpope/vim-surround')
     -- Debugger interface
-    use 'mfussenegger/nvim-dap'
+    use('mfussenegger/nvim-dap')
     -- UI for debugger
-    use 'rcarriga/nvim-dap-ui'
+    use('rcarriga/nvim-dap-ui')
+    -- Packer
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
+
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
+        }
+    }
 end)

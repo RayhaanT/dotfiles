@@ -9,8 +9,8 @@ vim.opt.shiftwidth = 4              -- width for autoindents
 vim.opt.smartindent = true          -- indent new lines in context sensitive way
 vim.opt.number = true               -- add line numbers
 vim.opt.relativenumber = true       -- add line numbers relative to current line
-vim.opt.wildmode = longest,list     -- get bash-like tab completions
-vim.opt.clipboard = unnamedplus     -- using system clipboard
+vim.opt.wildmode = "longest,list"   -- get bash-like tab completions
+vim.opt.clipboard = "unnamedplus"   -- using system clipboard
 vim.opt.cursorline = true           -- highlight current cursorline
 vim.opt.ttyfast = true              -- Speed up scrolling in Vim
 
