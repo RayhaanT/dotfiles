@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
     use('mfussenegger/nvim-dap')
     -- UI for debugger
     use('rcarriga/nvim-dap-ui')
-    -- Packer
+    -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -77,4 +77,6 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     }
+    -- Robust undo history
+    use('mbbill/undotree')
 end)
