@@ -19,3 +19,10 @@ vim.g.rustfmt_autosave = 1
 
 -- Latex unicoder
 vim.keymap.set("i", "<C-l>", "<Esc>:call unicder#start(1)<CR>")
+
+-- lualatexing the current doc
+vim.api.nvim_create_user_command(
+    'Luatex',
+    '!lualatex %',
+    {bang = false}
+)

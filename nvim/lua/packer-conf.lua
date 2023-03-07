@@ -15,8 +15,8 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         { run = ':TSUpdate' }
     }
-    -- -- Auto pairs for '(' '[' '{'
-    -- use 'jiangmiao/auto-pairs'
+    -- Auto pairs for '(' '[' '{'
+    use 'jiangmiao/auto-pairs'
     -- VimTex
     use('lervag/vimtex')
     -- Molokai Theme
