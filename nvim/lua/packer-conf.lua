@@ -79,4 +79,8 @@ return require('packer').startup(function(use)
     }
     -- Robust undo history
     use('mbbill/undotree')
+    -- Rust
+    use('rust-lang/rust.vim')
+    -- OpenCL
+    use('petRUShka/vim-opencl')
 end)
