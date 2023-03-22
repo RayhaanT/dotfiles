@@ -1,16 +1,16 @@
 font:
   normal:
-    family: "JetBrains Mono"
+    family: "JetBrains Mono NF"
     style: Regular
 
   bold:
-    family: "JetBrains Mono"
+    family: "JetBrains Mono NF"
     style: Bold
   italic:
-    family: "JetBrains Mono"
+    family: "JetBrains Mono NF"
     style: Italic
   bold_italic:
-    family: "JetBrains Mono"
+    family: "JetBrains Mono NF"
     style: Bold Italic
 
   size: 7
