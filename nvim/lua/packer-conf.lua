@@ -80,7 +80,7 @@ return require('packer').startup(function(use)
     -- Robust undo history
     use('mbbill/undotree')
     -- Rust
-    use('rust-lang/rust.vim')
+    use('simrat39/rust-tools.nvim')
     -- OpenCL kernel highlighting
     use('petRUShka/vim-opencl')
 end)
