@@ -79,4 +79,6 @@ return require('packer').startup(function(use)
     }
     -- Robust undo history
     use('mbbill/undotree')
+    -- OpenCL kernel highlighting
+    use('petRUShka/vim-opencl')
 end)
