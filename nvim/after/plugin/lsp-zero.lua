@@ -31,20 +31,22 @@ lsp.set_preferences({
     }
 })
 
--- Keybinds won't be made if buffer does not have LSP support
-lsp.on_attach(function(client, bufnr)
+lsp_attach = function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
   -- Keybinds
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+  vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
   vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
   vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "<leader>aa", vim.lsp.buf.code_action, opts)
-  vim.keymap.set("n", "<leader>re", vim.lsp.buf.references, opts)
+  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
   vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-end)
+end
+
+-- Keybinds won't be made if buffer does not have LSP support
+lsp.on_attach(lsp_attach)
 
 lsp.setup()
 

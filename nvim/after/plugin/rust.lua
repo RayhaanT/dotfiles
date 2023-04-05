@@ -10,6 +10,9 @@ local opts = {
       show_parameter_hints = true,
     },
   },
+  server = {
+      on_attach = lsp_attach
+  }
 }
 
 rt.setup(opts)
