@@ -50,22 +50,23 @@ end
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /home/rayhaan/.ghcup/bin # ghcup-env
 
-thefuck --alias | source
-
-function 246
-    cd ~/Documents/CS-246e
+function 341
+    cd ~/Documents/CS-341
+end
+function 350
+    cd ~/Documents/CS-350
+end
+function 370
+    cd ~/Documents/CS-370
+end
+function 255
+    cd ~/Documents/CO-255
 end
 function 245
-    cd ~/Documents/CS-245e
+    cd ~/Documents/MATH-245
 end
-function 241
-    cd ~/Documents/CS-241e
-end
-function 240
-    cd ~/Documents/STAT-240
-end
-function 250
-    cd ~/Documents/AMATH-250
+function ura
+    cd ~/Documents/ura-F23/
 end
 
 function uml
@@ -74,6 +75,15 @@ end
 
 function cisco
     /opt/cisco/anyconnect/bin/vpnui
+end
+
+function eduroam
+    sudo wpa_supplicant -B -i wlo1 -c /home/rayhaan/wifi/eduroam.cfg
+    sudo dhcpcd
+end
+
+function nm-start
+    sudo systemctl start NetworkManager
 end
 
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
