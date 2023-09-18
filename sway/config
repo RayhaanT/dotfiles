@@ -207,3 +207,5 @@ input * {
     repeat_delay 250
     repeat_rate 40
 }
+
+bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy

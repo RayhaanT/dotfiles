@@ -86,4 +86,8 @@ function nm-start
     sudo systemctl start NetworkManager
 end
 
+function castor
+    qemu-system-x86_64 -smp cpus=1 -kernel /home/rayhaan/Documents/CS-350/castoros/build/sys/castor -hda /home/rayhaan/Documents/CS-350/castoros/build/bootdisk.img -nic none -nographic
+end
+
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
