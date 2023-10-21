@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
 
     -- Telescope fuzzy finder
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     -- Treesitter (Incremental AST)
