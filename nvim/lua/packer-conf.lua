@@ -1,5 +1,18 @@
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+-- vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
@@ -26,7 +39,6 @@ return require('packer').startup(function(use)
     use('vim-airline/vim-airline-themes')
     use {
         'akinsho/bufferline.nvim',
-        tag = "v3.*",
         requires = 'nvim-tree/nvim-web-devicons'
     }
     -- Monokai pro alternative theme
@@ -54,7 +66,12 @@ return require('packer').startup(function(use)
     -- Debugger interface
     use('mfussenegger/nvim-dap')
     -- UI for debugger
-    use('rcarriga/nvim-dap-ui')
+    use {
+        'rcarriga/nvim-dap-ui',
+        requires = {
+            {'nvim-neotest/nvim-nio'},
+        }
+    }
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
