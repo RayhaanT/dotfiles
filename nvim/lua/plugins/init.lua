@@ -1,21 +1,4 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
--- Space for leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-return require('lazy').setup({
+return {
     -- Telescope fuzzy finder
     {
         'nvim-telescope/telescope.nvim',
@@ -45,8 +28,6 @@ return require('lazy').setup({
     'lewis6991/gitsigns.nvim',
     -- Git integration in vim
     'tpope/vim-fugitive',
-    -- Insert unicode from latex commands using <C-l>
-    'joom/latex-unicoder.vim',
     -- Two tone theme pack
     'atelierbram/Base2Tone-vim',
     -- Better seeking with f
@@ -98,4 +79,4 @@ return require('lazy').setup({
     'simrat39/rust-tools.nvim',
     -- OpenCL kernel highlighting
     'petRUShka/vim-opencl',
-})
+}
