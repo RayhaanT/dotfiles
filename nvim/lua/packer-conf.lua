@@ -1,81 +1,79 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
+-- Space for leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Only required if you have packer configured as `opt`
--- vim.cmd [[packadd packer.nvim]]
-
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use('wbthomason/packer.nvim')
-
+return require('lazy').setup({
     -- Telescope fuzzy finder
-    use {
+    {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
+        dependencies = { {'nvim-lua/plenary.nvim'} }
+    },
     -- Treesitter (Incremental AST)
-    use {
+    {
         'nvim-treesitter/nvim-treesitter',
-        { run = ':TSUpdate' }
-    }
+        build = ':TSUpdate'
+    },
     -- Auto pairs for '(' '[' '{'
-    use 'jiangmiao/auto-pairs'
+    'jiangmiao/auto-pairs',
     -- VimTex
-    use('lervag/vimtex')
+    'lervag/vimtex',
     -- Molokai Theme
-    use('tomasr/molokai')
+    'tomasr/molokai',
     -- Status line and tabline
-    use('vim-airline/vim-airline')
-    use('vim-airline/vim-airline-themes')
-    use {
+    'vim-airline/vim-airline',
+    'vim-airline/vim-airline-themes',
+    {
         'akinsho/bufferline.nvim',
-        requires = 'nvim-tree/nvim-web-devicons'
-    }
+        dependencies = 'nvim-tree/nvim-web-devicons'
+    },
     -- Monokai pro alternative theme
-    use('sainnhe/sonokai')
+    'sainnhe/sonokai',
     -- Git status line symbols/hunk tools/blame
-    use('lewis6991/gitsigns.nvim')
+    'lewis6991/gitsigns.nvim',
     -- Git integration in vim
-    use('tpope/vim-fugitive')
+    'tpope/vim-fugitive',
     -- Insert unicode from latex commands using <C-l>
-    use('joom/latex-unicoder.vim')
+    'joom/latex-unicoder.vim',
     -- Two tone theme pack
-    use('atelierbram/Base2Tone-vim')
+    'atelierbram/Base2Tone-vim',
     -- Better seeking with f
-    use('justinmk/vim-sneak')
+    'justinmk/vim-sneak',
     -- -- Racket REPL support
-    -- use 'Olical/conjure'
+    -- 'Olical/conjure'
     -- Diffview
-    use('sindrets/diffview.nvim')
+    'sindrets/diffview.nvim',
     -- Window resizing
-    use('simeji/winresizer')
+    'simeji/winresizer',
     -- Commenting
-    use('tomtom/tcomment_vim')
+    'tomtom/tcomment_vim',
     -- Replace brackets and stuff
-    use('tpope/vim-surround')
+    'tpope/vim-surround',
     -- Debugger interface
-    use('mfussenegger/nvim-dap')
+    'mfussenegger/nvim-dap',
     -- UI for debugger
-    use {
+    {
         'rcarriga/nvim-dap-ui',
-        requires = {
+        dependencies = {
             {'nvim-neotest/nvim-nio'},
         }
-    }
+    },
     -- LSP
-    use {
+    {
         'VonHeikemen/lsp-zero.nvim',
-        requires = {
+        dependencies = {
             -- LSP Support
             {'neovim/nvim-lspconfig'},
             {'williamboman/mason.nvim'},
@@ -93,11 +91,11 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
         }
-    }
+    },
     -- Robust undo history
-    use('mbbill/undotree')
+    'mbbill/undotree',
     -- Rust
-    use('simrat39/rust-tools.nvim')
+    'simrat39/rust-tools.nvim',
     -- OpenCL kernel highlighting
-    use('petRUShka/vim-opencl')
-end)
+    'petRUShka/vim-opencl',
+})

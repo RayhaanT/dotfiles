@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 vim.keymap.set("n", "<leader>fs", vim.cmd.Ex)
 
 -- Moving selections around
