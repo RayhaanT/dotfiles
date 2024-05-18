@@ -1,0 +1,10 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 24,
+  "spacing": 0,
+  "modules-left": ["sway/workspaces","sway/mode"],
+  "modules-center": [],
+  "modules-right": ["cpu","memory","battery","clock","tray"]
+}
+
