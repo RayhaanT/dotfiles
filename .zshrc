@@ -49,3 +49,6 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 function gc() {
     git commit -m "$argv"
 }
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
