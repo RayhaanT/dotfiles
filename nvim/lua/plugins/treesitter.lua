@@ -1,7 +1,7 @@
 return {
     -- Treesitter (Incremental AST)
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate'
+    build = ':TSUpdate',
     config = function()
         require'nvim-treesitter.configs'.setup {
             -- A list of parser names, or "all"
