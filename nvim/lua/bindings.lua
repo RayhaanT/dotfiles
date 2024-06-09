@@ -5,8 +5,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Quickfix navigation
-vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-m>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
 
 -- Jump to buffer using bufferline tags
 vim.keymap.set("n", "gb", ":BufferLinePick<CR>", { noremap = true, silent = true })
