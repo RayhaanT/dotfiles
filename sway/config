@@ -177,8 +177,8 @@ bar {
 }
 
 # move workspace between monitors
-bindsym $mod+Ctrl+greater move workspace to output right
-bindsym $mod+Ctrl+less move workspace to output left
+bindsym $mod+greater move workspace to output right
+bindsym $mod+less move workspace to output left
 
 # Media key bindings
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
