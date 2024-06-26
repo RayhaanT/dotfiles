@@ -189,7 +189,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-exec swaymsg output "*" bg /home/rayhaan/Downloads/wallpaper.jpg fill
+output "*" bg /home/rayhaan/Downloads/wallpaper.png fill
 
 # enable tap actions on touchpad
 input "type:touchpad" {
