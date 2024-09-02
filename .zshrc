@@ -54,3 +54,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setxkbmap -option caps:escape &> /dev/null
+
+# To enable screen recording:
+# /usr/lib/xdg-desktop-portal -r & /usr/lib/xdg-desktop-portal-wlr
+export XDG_CURRENT_DESKTOP=sway
+export MOZ_ENABLE_WAYLAND=1
