@@ -1,7 +1,7 @@
 return {
     -- Git status line symbols/hunk tools/blame
     'lewis6991/gitsigns.nvim',
-    config = {
+    opts = {
         -- Highlight colours
         signs = {
             add          = { text = '│' },
@@ -38,7 +38,6 @@ return {
             row = 0,
             col = 1
         },
-
         -- Keybinds
         on_attach = function(bufnr)
             local gs = package.loaded.gitsigns
@@ -75,5 +74,5 @@ return {
             map('n', '<leader>hD', function() gs.diffthis('~') end) -- Shows staged changes
             map('n', '<leader>td', gs.toggle_deleted)
         end
-    }
+    },
 }
