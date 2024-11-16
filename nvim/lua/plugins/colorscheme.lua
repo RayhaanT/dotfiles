@@ -15,8 +15,6 @@ return {
         end,
         dependencies = 'vim-airline/vim-airline-themes',
     },
-    -- Monokai pro alternative theme
-    'sainnhe/sonokai',
     -- Two tone theme pack
     'atelierbram/Base2Tone-vim',
 }
