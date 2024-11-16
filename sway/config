@@ -38,7 +38,7 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -190,6 +190,20 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 output "*" bg /home/rayhaan/Downloads/wallpaper.png fill
+
+set $lock swaylock -c 000000 --key-hl-color FFFFFF --inside-ver-color FFFFFF \
+    --ring-color 101010 --ring-ver-color FFFFFF --indicator-idle-visible \
+    --text-color FFFFFF --text-ver-color FFFFFF \
+    --inside-wrong-color 000000 --text-wrong-color 000000 --ring-wrong-color 931012 \
+    --inside-clear-color 000000 --text-clear-color 000000 
+
+bindsym $mod+Escape exec $lock
+
+exec swayidle -w \
+         timeout 900 "$lock -f" \
+         timeout 1000 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep "$lock -f"
 
 # enable tap actions on touchpad
 input "type:touchpad" {
