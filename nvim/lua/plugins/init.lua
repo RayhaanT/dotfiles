@@ -1,6 +1,6 @@
 return {
     -- Auto pairs for '(' '[' '{'
-    'jiangmiao/auto-pairs',
+    'windwp/nvim-autopairs',
     -- VimTex
     'lervag/vimtex',
     -- -- Racket REPL support
