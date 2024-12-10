@@ -55,6 +55,12 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 setxkbmap -option caps:escape &> /dev/null
 
+alias lock='swaylock -c 000000 --key-hl-color FFFFFF --inside-ver-color FFFFFF \
+    --ring-color 101010 --ring-ver-color FFFFFF --indicator-idle-visible \
+    --text-color FFFFFF --text-ver-color FFFFFF \
+    --inside-wrong-color 000000 --text-wrong-color 000000 --ring-wrong-color 931012 \
+    --inside-clear-color 000000 --text-clear-color 000000'
+
 # To enable screen recording:
 # /usr/lib/xdg-desktop-portal -r & /usr/lib/xdg-desktop-portal-wlr
 export XDG_CURRENT_DESKTOP=sway
