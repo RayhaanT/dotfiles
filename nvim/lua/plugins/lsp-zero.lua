@@ -52,9 +52,6 @@ return {
 
             cmp.setup({
                 mapping = cmp_mappings,
-                experimental = {
-                    ghost_text = true
-                }
             })
 
             lsp.set_preferences({

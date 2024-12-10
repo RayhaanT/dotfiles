@@ -11,5 +11,14 @@ return {
         vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
         vim.keymap.set('n', '<leader>fc', builtin.command_history, {})
         vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
+
+        require('telescope').setup {
+            defaults = {
+                -- Disable Treesitter when previewing .txt files
+                preview = {
+                    treesitter = false,
+                },
+            },
+        }
     end
 }
