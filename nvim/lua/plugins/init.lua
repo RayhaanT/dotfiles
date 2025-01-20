@@ -1,8 +1,19 @@
 return {
     -- Auto pairs for '(' '[' '{'
-    'windwp/nvim-autopairs',
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    },
+    -- Haskell
+    'neovimhaskell/haskell-vim',
     -- VimTex
-    'lervag/vimtex',
+    {
+        "lervag/vimtex",
+        init = function()
+            vim.g.vimtex_view_general_viewer = "evince"
+        end
+    },
     -- -- Racket REPL support
     -- 'Olical/conjure'
     -- Diffview
