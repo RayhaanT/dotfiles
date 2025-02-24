@@ -9,7 +9,7 @@ return {
         config = function()
             require('mason').setup({})
             require('mason-lspconfig').setup({
-                ensure_installed = { 'rust_analyzer', 'clangd', 'pyright', 'texlab' },
+                ensure_installed = { 'clangd', 'pyright', 'texlab' },
                 handlers = {
                     function(server_name)
                         require('lspconfig')[server_name].setup({})
