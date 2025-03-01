@@ -22,4 +22,11 @@ return {
     'simeji/winresizer',
     -- Commenting
     'tomtom/tcomment_vim',
+    -- Explorer
+    {
+        'nvim-tree/nvim-tree.lua',
+        config = function ()
+            require("nvim-tree").setup()
+        end
+    }
 }

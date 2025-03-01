@@ -47,3 +47,6 @@ vim.cmd([[
   autocmd FileType haskell setlocal smartindent
   let g:haskell_indent_before_where = 2
 ]])
+
+vim.g.loaded_netrw       = 1
+vim.g.loaded_netrwPlugin = 1
