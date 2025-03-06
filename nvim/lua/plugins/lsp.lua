@@ -38,7 +38,7 @@ return {
                     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
                     vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
                     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-                    vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, opts)
+                    -- vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, opts)
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
                     vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
                     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
