@@ -43,7 +43,7 @@ alias gf="git fetch"
 alias gp="git pull"
 alias ga="git add --all; git status"
 alias gs="git status"
-alias gd="git difftool"
+alias gd="nvim . +DiffviewOpen"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 function gc() {
