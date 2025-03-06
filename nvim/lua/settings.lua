@@ -54,3 +54,4 @@ vim.g.loaded_netrwPlugin = 1
 vim.o.swapfile = false
 
 vim.cmd.colorscheme("PaperColor")
+vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultError", { bg = "#1c1c1c", fg = "#af005f" })
