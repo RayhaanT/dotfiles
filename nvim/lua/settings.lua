@@ -33,9 +33,9 @@ vim.opt.updatetime = 300
 -- termguicolors
 vim.opt.termguicolors = true
 
--- Treesitter-based folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- syntax-sensitive folds
+vim.opt.foldmethod = "syntax"
+vim.opt.foldenable = false
 vim.opt.foldlevel = 15
 
 -- Stop the cursor from getting too close to screen bottom
