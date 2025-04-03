@@ -27,6 +27,9 @@ return {
                 virtual_text = true,
             })
 
+            local lsp_config = require('lspconfig')
+            lsp_config['ocamllsp'].setup({})
+
             vim.api.nvim_create_autocmd('LspAttach', {
                 desc = 'LSP actions',
                 callback = function(event)
