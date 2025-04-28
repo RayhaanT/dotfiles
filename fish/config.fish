@@ -2,14 +2,20 @@ set -g theme_display_virtualenv yes
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt '$ '
 set -g theme_show_exit_status yes
-set -gx PATH /home/rayhaan/bin /home/rayhaan/.nvm/versions/node/v17.0.1/bin /home/rayhaan/clang+llvm/bin /home/rayhaan/ccls/Release /home/rayhaan/.local/bin /home/rayhaan/.cargo/bin $PATH
+set -gx PATH /home/rayhaan/bin /home/rayhaan/.nvm/versions/node/v17.0.1/bin /home/rayhaan/clang+llvm/bin /home/rayhaan/ccls/Release /home/rayhaan/.local/bin /home/rayhaan/.cargo/bin /opt/cuda/bin $PATH
 set EDITOR nvim
 
 set GPG_TTY (tty)
 export GPG_TTY
 
-if not setxkbmap -option caps:escape
-    sudo loadkeys /usr/share/keymaps/Caps2Ctrl.map
+if status --is-login
+    if not setxkbmap -option caps:escape
+        sudo loadkeys /usr/share/keymaps/Caps2Ctrl.map
+    end
+
+    if not xset r rate 250 40
+        sudo kbdrate -r 250 -d 40
+    end
 end
 
 # Useful aliases
@@ -42,10 +48,6 @@ end
 
 function b
     sudo brightnessctl s "$argv"
-end
-
-if not xset r rate 250 40
-    sudo kbdrate -r 250 -d 40
 end
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /home/rayhaan/.ghcup/bin # ghcup-env
