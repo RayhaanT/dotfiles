@@ -3,8 +3,6 @@
 	email = tanweer.rayhaan@gmail.com
 [init]
 	defaultBranch = main
-[commit]
-	gpgSign = true
 [pull]
 	rebase = false
 [diff]
