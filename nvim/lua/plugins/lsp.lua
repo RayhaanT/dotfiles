@@ -1,24 +1,4 @@
 return {
-    -- LSP install manager
-    {
-        'williamboman/mason.nvim',
-        dependencies = {
-            { 'williamboman/mason-lspconfig.nvim' },
-        },
-
-        config = function()
-            require('mason').setup({})
-            require('mason-lspconfig').setup({
-                ensure_installed = { 'clangd', 'pyright', 'texlab' },
-                handlers = {
-                    function(server_name)
-                        require('lspconfig')[server_name].setup({})
-                    end,
-                },
-            })
-        end
-    },
-
     -- Basic LSP support
     {
         'neovim/nvim-lspconfig',
@@ -29,6 +9,7 @@ return {
 
             local lsp_config = require('lspconfig')
             lsp_config['ocamllsp'].setup({})
+            lsp_config['clangd'].setup({})
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 desc = 'LSP actions',
@@ -66,7 +47,6 @@ return {
         'hrsh7th/nvim-cmp',
         config = function()
             local cmp = require('cmp')
-            local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
             cmp.setup({
                 snippet = {
@@ -97,8 +77,6 @@ return {
             })
         end
     },
-    -- Use words from buffer as completions sources
-    { 'hrsh7th/cmp-buffer' },
     -- Use filepaths as completions sources
     { 'hrsh7th/cmp-path' },
     -- Use luasnip snippets as cmp source
