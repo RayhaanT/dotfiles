@@ -41,13 +41,6 @@ vim.opt.foldlevel = 15
 -- Stop the cursor from getting too close to screen bottom
 vim.opt.scrolloff = 8
 
-vim.cmd([[
-  " Haskell-specific settings for indentation
-  autocmd FileType haskell setlocal shiftwidth=4 softtabstop=4 expandtab
-  autocmd FileType haskell setlocal smartindent
-  let g:haskell_indent_before_where = 2
-]])
-
 vim.g.loaded_netrw       = 1
 vim.g.loaded_netrwPlugin = 1
 

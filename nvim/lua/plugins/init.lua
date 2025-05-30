@@ -5,17 +5,6 @@ return {
         event = "InsertEnter",
         config = true
     },
-    -- Haskell
-    'neovimhaskell/haskell-vim',
-    -- VimTex
-    {
-        "lervag/vimtex",
-        init = function()
-            vim.g.vimtex_view_general_viewer = "evince"
-        end
-    },
-    -- -- Racket REPL support
-    -- 'Olical/conjure'
     -- Diffview
     'sindrets/diffview.nvim',
     -- Window resizing

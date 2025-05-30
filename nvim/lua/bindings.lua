@@ -20,16 +20,6 @@ vim.keymap.set("n", "<leader>k", ":tabc<CR>")
 
 vim.g.rustfmt_autosave = 1
 
--- Latex unicoder
-vim.keymap.set("i", "<C-l>", "<Esc>:call unicder#start(1)<CR>")
-
--- lualatexing the current doc
-vim.api.nvim_create_user_command(
-    'Luatex',
-    '!lualatex %',
-    {bang = false}
-)
-
 -- disable lsp diagnostics
 vim.api.nvim_create_user_command("DiagnosticToggle", function()
 	local config = vim.diagnostic.config
@@ -40,21 +30,3 @@ vim.api.nvim_create_user_command("DiagnosticToggle", function()
 		signs = not vt,
 	}
 end, { desc = "toggle diagnostic" })
-
--- swap header and source
-vim.keymap.set("n", "<C-b>", function()
-    if vim.bo.filetype == "cpp" then
-        local hname = vim.fn.expand('%')
-        print(name)
-        local fh = io.open(hname, "r")
-        if f ~= nil then
-            io.close(fh)
-            vim.cmd('edit ' .. hname)
-        else
-            hname = vim.fn.expand('%:r.hpp')
-            vim.cmd('edit ' .. hname)
-        end
-    else
-        local sname = vim.fn.expand('%:r.c')
-    end
-end)
