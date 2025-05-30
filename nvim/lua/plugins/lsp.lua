@@ -51,7 +51,7 @@ return {
             cmp.setup({
                 snippet = {
                     expand = function(args)
-                        require('luasnip').lsp_expand(args.body)
+                        -- require('luasnip').lsp_expand(args.body)
                         -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
                     end,
                 },
@@ -70,7 +70,7 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
-                    { name = 'luasnip' }, -- For luasnip users.
+                    -- { name = 'luasnip' }, -- For luasnip users.
                 }, {
                     { name = 'buffer' },
                 })
@@ -79,15 +79,8 @@ return {
     },
     -- Use filepaths as completions sources
     { 'hrsh7th/cmp-path' },
-    -- Use luasnip snippets as cmp source
-    { 'saadparwaiz1/cmp_luasnip' },
     -- Use lsp output as cmp source
     { 'hrsh7th/cmp-nvim-lsp' },
     -- Cmp source for nvim Lua API
     { 'hrsh7th/cmp-nvim-lua' },
-
-    -- Snippet engine
-    { 'L3MON4D3/LuaSnip' },
-    -- Various snippets
-    { 'rafamadriz/friendly-snippets' },
 }
