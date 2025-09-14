@@ -15,8 +15,8 @@ vim.keymap.set("n", "ft", ":BufferLinePick<CR>", { noremap = true, silent = true
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- New tab and close tab
-vim.keymap.set("n", "<leader>t", ":tabnew")
-vim.keymap.set("n", "<leader>k", ":tabc<CR>")
+vim.keymap.set("n", "<leader>nt", ":tab sp<CR>")
+vim.keymap.set("n", "<leader>kt", ":tabc<CR>")
 
 vim.g.rustfmt_autosave = 1
 
