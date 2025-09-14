@@ -15,7 +15,7 @@ vim.keymap.set("n", "ft", ":BufferLinePick<CR>", { noremap = true, silent = true
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- New tab and close tab
-vim.keymap.set("n", "<leader>t", ":tab sp<CR>")
+vim.keymap.set("n", "<leader>t", ":tabnew")
 vim.keymap.set("n", "<leader>k", ":tabc<CR>")
 
 vim.g.rustfmt_autosave = 1
@@ -43,21 +43,3 @@ vim.api.nvim_create_user_command("DiagnosticToggle", function()
 		signs = not vt,
 	}
 end, { desc = "toggle diagnostic" })
-
--- swap header and source
-vim.keymap.set("n", "<C-b>", function()
-    if vim.bo.filetype == "cpp" then
-        local hname = vim.fn.expand('%')
-        print(name)
-        local fh = io.open(hname, "r")
-        if f ~= nil then
-            io.close(fh)
-            vim.cmd('edit ' .. hname)
-        else
-            hname = vim.fn.expand('%:r.hpp')
-            vim.cmd('edit ' .. hname)
-        end
-    else
-        local sname = vim.fn.expand('%:r.c')
-    end
-end)
