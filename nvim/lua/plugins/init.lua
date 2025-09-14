@@ -14,8 +14,6 @@ return {
             vim.g.vimtex_view_general_viewer = "evince"
         end
     },
-    -- -- Racket REPL support
-    -- 'Olical/conjure'
     -- Diffview
     'sindrets/diffview.nvim',
     -- Explorer

@@ -12,15 +12,14 @@ return {
             untracked    = { text = '┆' },
         },
 
-        -- Highlight choices
-        signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
-        numhl      = true, -- Toggle with `:Gitsigns toggle_numhl`
-        linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
-        word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
+        signcolumn = true,
+        numhl      = true,
+        linehl     = false,
+        word_diff  = false,
         attach_to_untracked = true,
 
         -- Git blame options
-        current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+        current_line_blame = true,
         current_line_blame_opts = {
             virt_text = true,
             virt_text_pos = 'eol',
