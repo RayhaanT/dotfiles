@@ -20,8 +20,11 @@ vim.keymap.set("n", "<leader>k", ":tabc<CR>")
 
 vim.g.rustfmt_autosave = 1
 
--- Latex unicoder
-vim.keymap.set("i", "<C-l>", "<Esc>:call unicder#start(1)<CR>")
+-- Resize windows
+vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
+vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
+vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 
 -- lualatexing the current doc
 vim.api.nvim_create_user_command(
