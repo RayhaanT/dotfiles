@@ -27,13 +27,19 @@ return {
                 virtual_text = true,
             })
 
-            local lsp_config = require('lspconfig')
-            lsp_config['ocamllsp'].setup({})
+            vim.lsp.config('ocamllsp', {})
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 desc = 'LSP actions',
                 callback = function(event)
                     local opts = { buffer = event.buf, remap = false }
+
+                    local prev_diagnostic = function ()
+                        vim.diagnostic.jump({count = -1})
+                    end
+                    local next_diagnostic = function ()
+                        vim.diagnostic.jump({count = 1})
+                    end
 
                     -- Keybinds
                     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -44,8 +50,8 @@ return {
                     -- vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, opts)
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
                     vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-                    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-                    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+                    vim.keymap.set("n", "[d", prev_diagnostic, opts)
+                    vim.keymap.set("n", "]d", next_diagnostic, opts)
                     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
                     vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
                     vim.keymap.set({ 'n', 'x' }, '<F3>', function() vim.lsp.buf.format({ async = true }) end, opts)
@@ -66,7 +72,6 @@ return {
         'hrsh7th/nvim-cmp',
         config = function()
             local cmp = require('cmp')
-            local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
             cmp.setup({
                 snippet = {
@@ -112,4 +117,17 @@ return {
     { 'L3MON4D3/LuaSnip' },
     -- Various snippets
     { 'rafamadriz/friendly-snippets' },
+
+    -- Proper inspection of vim global for nvim dev
+    {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                -- See the configuration section for more details
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
 }
