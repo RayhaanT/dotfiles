@@ -58,3 +58,11 @@ vim.o.swapfile = false
 
 vim.cmd.colorscheme("PaperColor")
 vim.api.nvim_set_hl(0, "LspDiagnosticsDefaultError", { bg = "#1c1c1c", fg = "#af005f" })
+
+-- Make <CR> in quickfix window actually open the entry hovered over instead of erroring
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    vim.keymap.set('n', '<CR>', '<CR>', { buffer = true })
+  end
+})
