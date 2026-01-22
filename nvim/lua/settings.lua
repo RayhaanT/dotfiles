@@ -41,6 +41,9 @@ vim.opt.foldmethod = "syntax"
 vim.opt.foldenable = false
 vim.opt.foldlevel = 15
 
+-- line at colum 80
+vim.opt.colorcolumn = "80"
+
 -- Stop the cursor from getting too close to screen bottom
 vim.opt.scrolloff = 8
 

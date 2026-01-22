@@ -22,5 +22,6 @@ return {
         config = function ()
             require("nvim-tree").setup()
         end
-    }
+    },
+    'xiyaowong/virtcolumn.nvim',
 }
