@@ -7,8 +7,8 @@ fi
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=999999999
+SAVEHIST=999999999
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
@@ -65,3 +65,10 @@ alias lock='swaylock -c 000000 --key-hl-color FFFFFF --inside-ver-color FFFFFF \
 # /usr/lib/xdg-desktop-portal -r & /usr/lib/xdg-desktop-portal-wlr
 export XDG_CURRENT_DESKTOP=sway
 export MOZ_ENABLE_WAYLAND=1
+
+# Enable fzf key bindings and auto-completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Use fzf for command history search
+[[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
+[[ -f /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
