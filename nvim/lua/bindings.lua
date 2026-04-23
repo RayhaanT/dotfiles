@@ -4,6 +4,10 @@ vim.keymap.set("n", "<leader>fs", ":NvimTreeOpen<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Line navigation
+vim.keymap.set({ "n", "v" }, "H", "^")
+vim.keymap.set({ "n", "v" }, "L", "$")
+
 -- Quickfix navigation
 vim.keymap.set("n", "<C-m>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
