@@ -163,7 +163,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-output "*" bg /home/rayhaan/Downloads/wallpaper.png fill
+output "*" bg /home/rayhaan/wallpaper.png fill
 
 set $lock swaylock -c 000000 --key-hl-color FFFFFF --inside-ver-color FFFFFF \
     --ring-color 101010 --ring-ver-color FFFFFF --indicator-idle-visible \
@@ -197,3 +197,7 @@ input * {
 exec sway-audio-idle-inhibit
 
 bindsym $mod+p exec grimshot copy area
+
+output HDMI-A-1 mode 2560x1440@143.912Hz
+output HDMI-A-1 position 0 0
+output eDP-1 position 2560 1000
