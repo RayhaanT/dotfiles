@@ -4,16 +4,14 @@ return {
         'williamboman/mason.nvim',
         dependencies = {
             { 'williamboman/mason-lspconfig.nvim' },
+            { 'neovim/nvim-lspconfig' },
         },
-
         config = function()
             require('mason').setup({})
             require('mason-lspconfig').setup({
                 ensure_installed = { 'clangd', 'pyright', 'texlab' },
-                handlers = {
-                    function(server_name)
-                        require('lspconfig')[server_name].setup({})
-                    end,
+                automatic_enable = {
+                    exclude = { 'rust_analyzer' },
                 },
             })
         end
@@ -27,28 +25,27 @@ return {
                 virtual_text = true,
             })
 
-            vim.lsp.config('ocamllsp', {})
+            -- ocamllsp is installed via opam, not mason
+            vim.lsp.enable('ocamllsp')
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 desc = 'LSP actions',
                 callback = function(event)
                     local opts = { buffer = event.buf, remap = false }
 
-                    local prev_diagnostic = function ()
-                        vim.diagnostic.jump({count = -1})
+                    local prev_diagnostic = function()
+                        vim.diagnostic.jump({ count = -1 })
                     end
-                    local next_diagnostic = function ()
-                        vim.diagnostic.jump({count = 1})
+                    local next_diagnostic = function()
+                        vim.diagnostic.jump({ count = 1 })
                     end
 
-                    -- Keybinds
                     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
                     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
                     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
                     vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
                     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
                     vim.keymap.set("n", "gh", "<cmd>LspClangdSwitchSourceHeader<cr>", opts)
-                    -- vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, opts)
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
                     vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
                     vim.keymap.set("n", "[d", prev_diagnostic, opts)
@@ -59,13 +56,6 @@ return {
                 end,
             })
         end,
-        opts = {
-            setup = {
-                rust_analyzer = function()
-                    return true
-                end,
-            },
-        },
     },
 
     -- Completion engine
@@ -78,11 +68,9 @@ return {
                 snippet = {
                     expand = function(args)
                         require('luasnip').lsp_expand(args.body)
-                        -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
                     end,
                 },
                 window = {
-                    -- completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
                 },
                 mapping = cmp.mapping.preset.insert({
@@ -96,37 +84,27 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
-                    { name = 'luasnip' }, -- For luasnip users.
+                    { name = 'luasnip' },
                 }, {
                     { name = 'buffer' },
                 })
             })
         end
     },
-    -- Use words from buffer as completions sources
     { 'hrsh7th/cmp-buffer' },
-    -- Use filepaths as completions sources
     { 'hrsh7th/cmp-path' },
-    -- Use luasnip snippets as cmp source
     { 'saadparwaiz1/cmp_luasnip' },
-    -- Use lsp output as cmp source
     { 'hrsh7th/cmp-nvim-lsp' },
-    -- Cmp source for nvim Lua API
     { 'hrsh7th/cmp-nvim-lua' },
 
-    -- Snippet engine
     { 'L3MON4D3/LuaSnip' },
-    -- Various snippets
     { 'rafamadriz/friendly-snippets' },
 
-    -- Proper inspection of vim global for nvim dev
     {
         "folke/lazydev.nvim",
-        ft = "lua", -- only load on lua files
+        ft = "lua",
         opts = {
             library = {
-                -- See the configuration section for more details
-                -- Load luvit types when the `vim.uv` word is found
                 { path = "${3rd}/luv/library", words = { "vim%.uv" } },
             },
         },
