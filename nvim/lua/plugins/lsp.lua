@@ -46,6 +46,7 @@ return {
                     vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
                     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
                     vim.keymap.set("n", "gh", "<cmd>LspClangdSwitchSourceHeader<cr>", opts)
+                    -- vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, opts)
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
                     vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
                     vim.keymap.set("n", "[d", prev_diagnostic, opts)
@@ -91,15 +92,23 @@ return {
             })
         end
     },
+    -- Use words from buffer as completions sources
     { 'hrsh7th/cmp-buffer' },
+    -- Use filepaths as completions sources
     { 'hrsh7th/cmp-path' },
+    -- Use luasnip snippets as cmp source
     { 'saadparwaiz1/cmp_luasnip' },
+    -- Use lsp output as cmp source
     { 'hrsh7th/cmp-nvim-lsp' },
+    -- Cmp source for nvim Lua API
     { 'hrsh7th/cmp-nvim-lua' },
 
+    -- Snippet engine
     { 'L3MON4D3/LuaSnip' },
+    -- Various snippets
     { 'rafamadriz/friendly-snippets' },
 
+    -- Proper inspection of vim global for nvim dev
     {
         "folke/lazydev.nvim",
         ft = "lua",
